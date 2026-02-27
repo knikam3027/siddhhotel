@@ -161,8 +161,7 @@ button[type="submit"]:hover {
     background-color: #444;
     padding: 20px;
     text-align: center;
-    position: fixed;
-    bottom: 0;
+    position: relative;
     width: 100%;
     font-weight: 500;
 }
