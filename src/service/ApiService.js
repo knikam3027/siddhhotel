@@ -4,7 +4,7 @@ export default class ApiService {
 
     static BASE_URL = process.env.REACT_APP_API_BASE_URL || 
         (process.env.NODE_ENV === 'production' 
-            ? 'https://siddhihotel-backendnode.onrender.com' 
+            ? 'https://hotelbackend-nkre.onrender.com' 
             : 'http://localhost:4040')
 
     static getHeader() {
