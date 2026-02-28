@@ -23,6 +23,11 @@ const RoomDetailsPage = () => {
   const [confirmationCode, setConfirmationCode] = useState(''); // State variable for booking confirmation code
   const [errorMessage, setErrorMessage] = useState(''); // State variable for error message
 
+  // Handle image load error - use placeholder
+  const handleImageError = (e) => {
+    e.target.src = 'https://images.unsplash.com/photo-1566665797739-1674de7a421a?w=800&h=600&fit=crop';
+  };
+
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -170,7 +175,13 @@ const RoomDetailsPage = () => {
       )}
       <h2>Room Details</h2>
       <br />
-      <img src={roomPhotoUrl} alt={roomType} className="room-details-image" />
+      <img 
+        src={roomPhotoUrl} 
+        alt={roomType} 
+        className="room-details-image"
+        onError={handleImageError}
+        loading="lazy"
+      />
       <div className="room-details-info">
         <h3>{roomType}</h3>
         <p>Price: {convertAndFormatPrice(roomPrice)} / night</p>

@@ -6,13 +6,25 @@ import { convertAndFormatPrice } from '../../utils/currencyConverter';
 const RoomResult = ({ roomSearchResults }) => {
     const navigate = useNavigate(); // Initialize useNavigate hook
     const isAdmin = ApiService.isAdmin();
+    
+    // Handle image load error - use placeholder
+    const handleImageError = (e) => {
+        e.target.src = 'https://images.unsplash.com/photo-1566665797739-1674de7a421a?w=800&h=600&fit=crop';
+    };
+    
     return (
         <section className="room-results">
             {roomSearchResults && roomSearchResults.length > 0 && (
                 <div className="room-list">
                     {roomSearchResults.map(room => (
                         <div key={room.id} className="room-list-item">
-                            <img className='room-list-item-image' src={room.roomPhotoUrl} alt={room.roomType} />
+                            <img 
+                                className='room-list-item-image' 
+                                src={room.roomPhotoUrl} 
+                                alt={room.roomType}
+                                onError={handleImageError}
+                                loading="lazy"
+                            />
                             <div className="room-details">
                                 <h3>{room.roomType}</h3>
                                 <p>Price: {convertAndFormatPrice(room.roomPrice)} / night</p>
