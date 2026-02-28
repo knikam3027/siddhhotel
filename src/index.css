@@ -1101,8 +1101,258 @@ h2 {
 
 
 
-/* Responsive styles */
+/* Responsive styles - Tablet & Mobile */
 @media (max-width: 768px) {
+
+    /* Navigation */
+    .navbar {
+        padding: 15px 20px;
+        flex-wrap: wrap;
+    }
+
+    .navbar-brand a {
+        font-size: 20px;
+    }
+
+    .navbar-ul {
+        flex-wrap: wrap;
+        gap: 10px;
+        justify-content: center;
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    .navbar-ul li {
+        margin-left: 0;
+        margin: 5px;
+    }
+
+    .navbar-ul li a {
+        font-size: 14px;
+    }
+
+    .user-welcome {
+        width: 100%;
+        text-align: center;
+        font-size: 14px;
+    }
+
+    /* Auth Pages */
+    .auth-container {
+        max-width: 90%;
+        padding: 15px;
+        margin: 15px auto;
+    }
+
+    .auth-container h2 {
+        font-size: 22px;
+    }
+
+    .form-group input {
+        width: 88%;
+        padding: 8px;
+        font-size: 14px;
+    }
+
+    button[type="submit"] {
+        width: 93%;
+        padding: 10px;
+        font-size: 14px;
+    }
+
+    /* Home Page */
+    .header-banner {
+        height: 300px;
+    }
+
+    .header-banner h1 {
+        font-size: 28px;
+    }
+
+    .header-banner h3 {
+        font-size: 18px;
+    }
+
+    /* Search Container */
+    .search-container {
+        margin-left: 10px;
+        padding: 10px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .search-field {
+        flex: 0 0 100%;
+        margin: 5px 0;
+    }
+
+    .home-search-button {
+        width: 100%;
+        margin: 10px 0;
+    }
+
+    /* Room Results */
+    .room-results {
+        margin: 10px 5px;
+    }
+
+    .room-list-item {
+        width: 100%;
+        height: auto;
+        min-height: 180px;
+        flex-direction: column;
+        margin: 10px 0;
+    }
+
+    .room-list-item-image {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+    }
+
+    .room-details {
+        padding: 10px;
+        margin-left: 0;
+    }
+
+    .room-details h3 {
+        font-size: 18px;
+    }
+
+    .room-details p {
+        font-size: 14px;
+    }
+
+    .book-now-div {
+        width: 100%;
+        padding: 10px;
+        text-align: center;
+    }
+
+    .book-now-button,
+    .edit-room-button {
+        width: 90%;
+        padding: 12px;
+        font-size: 14px;
+        margin: 5px auto;
+    }
+
+    /* Services Section */
+    .service-section {
+        margin: 10px 15px;
+    }
+
+    .service-card {
+        flex: 1 1 100%;
+        margin: 5px 0;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .service-card img {
+        margin: 0 auto 10px auto;
+    }
+
+    .view-rooms-home {
+        margin: 15px 20px;
+        font-size: 16px;
+    }
+
+    /* All Rooms Page */
+    .all-rooms {
+        margin: 30px 0 50px 0;
+    }
+
+    .all-room-filter-div {
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+
+    .all-room-filter-div label {
+        font-size: 16px;
+    }
+
+    .all-room-filter-div select {
+        width: 100%;
+        margin-top: 5px;
+    }
+
+    .add-room-button {
+        float: none;
+        display: block;
+        width: 90%;
+        margin: 10px auto;
+    }
+
+    /* Room Details Page */
+    .room-details-booking {
+        margin: 15px 5px 50px 5px;
+        padding: 10px;
+    }
+
+    .room-details-image {
+        width: 100%;
+        height: auto;
+        max-width: 400px;
+    }
+
+    .detail-search-field {
+        margin: 5px 0;
+        padding: 10px;
+        width: 100%;
+    }
+
+    .guest-container {
+        width: 100%;
+    }
+
+    .guest-div {
+        width: 100%;
+        margin-bottom: 15px;
+    }
+
+    .guest-div label {
+        display: block;
+        margin-bottom: 5px;
+    }
+
+    .guest-div input[type="number"],
+    .guest-div input[type="tel"] {
+        width: 100%;
+        padding: 10px;
+    }
+
+    .confirm-booking {
+        width: 100%;
+        padding: 12px;
+    }
+
+    /* Find Booking Page */
+    .find-booking-page {
+        max-width: 95%;
+        margin: 15px auto 40px auto;
+        padding: 15px;
+    }
+
+    .search-container input[type="text"] {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .search-container button {
+        width: 100%;
+    }
+
+    /* Admin Pages */
+    .admin-page {
+        max-width: 95%;
+        margin: 30px auto;
+        padding: 15px;
+    }
+
+    .welcome-message {
+        font-size: 1.5em;
+    }
 
     .admin-actions {
         flex-direction: column;
@@ -1115,87 +1365,173 @@ h2 {
         font-size: 0.9em;
     }
 
-    .form-group input {
-        padding: 6px;
+    /* Edit Room Page */
+    .edit-room-container {
+        max-width: 95%;
+        margin: 30px auto;
+        padding: 15px;
     }
 
-    .auth-container {
-        border-radius: 0;
-        border: none;
-        padding: 10px;
+    .edit-room-form .form-group input,
+    .edit-room-form .form-group textarea {
+        width: calc(100% - 20px);
     }
 
-    .auth-container h2 {
-        font-size: 24px;
-        color: #007F86;
-    }
-
-    .form-group input {
-        padding: 8px;
-    }
-
-    button[type="submit"] {
-        padding: 11px;
-    }
-
-    .header-banner h1 {
-        font-size: 20px;
-    }
-
-    .search-field {
-        flex: 0 0 calc(100% - 20px);
-    }
-
-    .home-search-button {
+    .update-button,
+    .delete-button {
         width: 100%;
+        margin: 5px 0;
     }
 
-    .room-list-item-image {
-        width: 30%;
+    /* Bookings Container */
+    .bookings-container {
+        max-width: 95%;
+        margin: 15px auto;
+        padding: 15px;
     }
 
-    .book-now-button {
-        background-color: #007F86;
-        color: white;
-        border: none;
-        padding: 5px;
-        font-weight: 500;
+    h2 {
+        font-size: 1.5em;
     }
 
-    .all-room-filter-div {
-        margin: 0px;
+    .search-div {
+        flex-direction: column;
+        align-items: stretch;
+        margin: 20px auto;
     }
 
-    .search-container {
-        display: block;
+    .search-div input {
+        width: 100%;
+        margin-top: 10px;
     }
 
-    .service-section {
-        margin: 5px;
-        display: flex;
-        flex-wrap: wrap;
+    .booking-results {
+        grid-template-columns: 1fr;
     }
 
-    /*Navbar*/
+    /* Profile Pages */
+    .profile-page,
+    .edit-profile-page {
+        max-width: 95%;
+        margin: 15px auto;
+        padding: 15px;
+    }
 
+    .profile-actions {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .profile-actions button {
+        width: 100%;
+        padding: 12px;
+    }
+
+    /* Pagination */
+    .pagination-button {
+        padding: 6px 10px;
+        font-size: 14px;
+    }
+
+    /* Footer */
+    .my-footer {
+        padding: 15px 10px;
+        font-size: 14px;
+    }
+}
+
+/* Mobile Specific - Extra Small Devices */
+@media (max-width: 480px) {
+    
+    /* Navigation */
     .navbar {
-        padding: 5px 10px 5px 10px;
+        padding: 10px 15px;
     }
 
-    .navbar-ul {
-        justify-content: space-between;
-    }
-
-    .navbar-ul li {
-        flex: 1 1 22%;
-        /* Adjust to fit 4 items per row */
-        margin-left: 0;
-        margin-bottom: 10px;
-        text-align: center;
+    .navbar-brand a {
+        font-size: 18px;
     }
 
     .navbar-ul li a {
-        display: block;
+        font-size: 12px;
+        padding: 5px;
     }
 
+    /* Home Banner */
+    .header-banner {
+        height: 250px;
+    }
+
+    .header-banner h1 {
+        font-size: 22px;
+    }
+
+    .header-banner h3 {
+        font-size: 16px;
+    }
+
+    /* Room List */
+    .room-list-item {
+        min-height: 150px;
+    }
+
+    .room-list-item-image {
+        height: 150px;
+    }
+
+    .room-details h3 {
+        font-size: 16px;
+    }
+
+    .room-details p {
+        font-size: 13px;
+    }
+
+    /* Buttons */
+    .book-now-button,
+    .edit-room-button,
+    .admin-button {
+        font-size: 13px;
+        padding: 10px;
+    }
+
+    /* Forms */
+    .form-group input {
+        font-size: 13px;
+    }
+
+    button[type="submit"] {
+        font-size: 13px;
+    }
+
+    /* Service Cards */
+    .service-title {
+        font-size: 16px;
+    }
+
+    .service-description {
+        font-size: 13px;
+    }
+
+    /* Messages */
+    .error-message,
+    .success-message {
+        font-size: 16px;
+    }
+
+    /* Room Details */
+    .room-details-image {
+        width: 100%;
+    }
+
+    /* Search Fields */
+    .search-field label {
+        font-size: 14px;
+    }
+
+    .search-field input,
+    .search-field select {
+        font-size: 14px;
+        padding: 8px;
+    }
 }
