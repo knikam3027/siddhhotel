@@ -6,7 +6,7 @@ const ChatBot = () => {
     const [messages, setMessages] = useState([
         {
             id: 1,
-            text: "Hello! 👋 I'm your Siddhi Hotel assistant. How can I help you today? I can help you with:\n• Room recommendations\n• Hotel information\n• Booking guidance\n• Pune attractions & travel tips\n• Room availability and pricing",
+            text: "Hello! 👋 I'm your Siddhi Hotel Assistant. I'm here to help you with:\n\n🏨 Room Information\n📅 Booking Guidance\n💰 Payment & Wallet Details\n🎭 Pune Attractions & Travel Tips\n📱 City Information & Recommendations\n🏷️ Pricing & Availability\n💳 Booking Support\n\nHow can I assist you today?",
             sender: 'bot',
             timestamp: new Date()
         }
@@ -73,7 +73,7 @@ const ChatBot = () => {
         setMessages([
             {
                 id: 1,
-                text: "Hello! 👋 I'm your Siddhi Hotel assistant. How can I help you today? I can help you with:\n• Room recommendations\n• Hotel information\n• Booking guidance\n• Pune attractions & travel tips\n• Room availability and pricing",
+                text: "Hello! 👋 I'm your Siddhi Hotel Assistant. I'm here to help you with:\n\n🏨 Room Information\n📅 Booking Guidance\n💰 Payment & Wallet Details\n🎭 Pune Attractions & Travel Tips\n📱 City Information & Recommendations\n🏷️ Pricing & Availability\n💳 Booking Support\n\nHow can I assist you today?",
                 sender: 'bot',
                 timestamp: new Date()
             }
@@ -145,7 +145,7 @@ const ChatBot = () => {
                             type="text"
                             value={inputValue}
                             onChange={(e) => setInputValue(e.target.value)}
-                            placeholder="Ask me anything about hotels, rooms, or Pune..."
+                            placeholder="Ask about rooms, booking, attractions, payment..."
                             disabled={loading}
                             className="chatbot-input"
                         />

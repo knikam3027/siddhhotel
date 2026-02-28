@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import ApiService from '../../service/ApiService'; // Assuming your service is in a file called ApiService.js
 import DatePicker from 'react-datepicker';
+import { convertUSDtoINR, formatINRPrice, convertAndFormatPrice } from '../../utils/currencyConverter';
 // import 'react-datepicker/dist/react-datepicker.css';
 
 const RoomDetailsPage = () => {
@@ -29,7 +30,7 @@ const RoomDetailsPage = () => {
         const response = await ApiService.getRoomById(roomId);
         setRoomDetails(response.room);
         const userProfile = await ApiService.getUserProfile();
-        setUserId(userProfile.user.id);
+        setUserId(userProfile.user._id);
       } catch (error) {
         setError(error.response?.data?.message || error.message);
       } finally {
@@ -172,7 +173,7 @@ const RoomDetailsPage = () => {
       <img src={roomPhotoUrl} alt={roomType} className="room-details-image" />
       <div className="room-details-info">
         <h3>{roomType}</h3>
-        <p>Price: ${roomPrice} / night</p>
+        <p>Price: {convertAndFormatPrice(roomPrice)} / night</p>
         <p>{description}</p>
       </div>
       {bookings && bookings.length > 0 && (
@@ -243,7 +244,7 @@ const RoomDetailsPage = () => {
         )}
         {totalPrice > 0 && (
           <div className="total-price">
-            <p>Total Price: ${totalPrice}</p>
+            <p>Total Price: {formatINRPrice(convertUSDtoINR(totalPrice))}</p>
             <p>Total Guests: {totalGuests}</p>
             <button onClick={acceptBooking} className="accept-booking">Accept Booking</button>
           </div>

@@ -1,6 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom'; // Import useNavigate
 import ApiService from '../../service/ApiService';
+import { convertAndFormatPrice } from '../../utils/currencyConverter';
 
 const RoomResult = ({ roomSearchResults }) => {
     const navigate = useNavigate(); // Initialize useNavigate hook
@@ -14,7 +15,7 @@ const RoomResult = ({ roomSearchResults }) => {
                             <img className='room-list-item-image' src={room.roomPhotoUrl} alt={room.roomType} />
                             <div className="room-details">
                                 <h3>{room.roomType}</h3>
-                                <p>Price: ${room.roomPrice} / night</p>
+                                <p>Price: {convertAndFormatPrice(room.roomPrice)} / night</p>
                                 <p>Description: {room.roomDescription}</p>
                             </div>
 

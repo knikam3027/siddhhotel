@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import ApiService from '../../service/ApiService'; // Assuming your service is in a file called ApiService.js
+import { convertAndFormatPrice } from '../../utils/currencyConverter';
 
 const EditBookingPage = () => {
     const navigate = useNavigate();
@@ -77,7 +78,7 @@ const EditBookingPage = () => {
                     <h3>Room Details</h3>
                     <div>
                         <p> Room Type: {bookingDetails.room.roomType}</p>
-                        <p> Room Price: ${bookingDetails.room.roomPrice}</p>
+                        <p> Room Price: {convertAndFormatPrice(bookingDetails.room.roomPrice)}</p>
                         <p> Room Description: {bookingDetails.room.roomDescription}</p>
                         <img src={bookingDetails.room.roomPhotoUrl} alt="" sizes="" srcSet="" />
                     </div>

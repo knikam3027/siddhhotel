@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import ApiService from '../../service/ApiService';
 import WalletSection from '../wallet/WalletSection';
+import { convertAndFormatPrice } from '../../utils/currencyConverter';
 
 const ProfilePage = () => {
     const [user, setUser] = useState(null);
@@ -107,7 +108,7 @@ const ProfilePage = () => {
                                             <div>
                                                 <p><strong>✓ Confirmation Code:</strong> <span style={{color: '#28a745', fontWeight: 'bold'}}>{booking.bookingConfirmationCode}</span></p>
                                                 <p><strong>🛏️ Room Type:</strong> {booking.room?.roomType}</p>
-                                                <p><strong>💰 Room Price:</strong> ₹{booking.room?.roomPrice}/night</p>
+                                                <p><strong>💰 Room Price:</strong> {convertAndFormatPrice(booking.room?.roomPrice)}/night</p>
                                                 <p><strong>📆 Check-in:</strong> {new Date(booking.checkInDate).toDateString()}</p>
                                                 <p><strong>📆 Check-out:</strong> {new Date(booking.checkOutDate).toDateString()}</p>
                                                 <p><strong>👥 Total Guests:</strong> {booking.totalNumOfGuests}</p>
